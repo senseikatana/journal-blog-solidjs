@@ -10,7 +10,7 @@ export default function ThemeToggle() {
       role="radiogroup"
       aria-label="Theme"
     >
-      <span class="indicator" aria-hidden="true"></span>
+      <span class="indicator" aria-hidden="true" />
       <For each={THEMES}>
         {(t) => (
           // biome-ignore lint/a11y/useSemanticElements: patrón ARIA válido radiogroup + botones role="radio"

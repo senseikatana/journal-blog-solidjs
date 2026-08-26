@@ -6,9 +6,13 @@ export default function NewsletterSection() {
   const onSubmit = (e: Event) => {
     e.preventDefault();
     const input = inputRef;
-    if (!input) return;
+    if (!input) {
+      return;
+    }
     const email = input.value.trim();
-    if (!email) return;
+    if (!email) {
+      return;
+    }
     input.value = "";
     showToast(`subscribed — welcome aboard, ${email.split("@")[0]}`);
   };
@@ -31,7 +35,7 @@ export default function NewsletterSection() {
               type="email"
               class="newsletter-input"
               placeholder="you@somewhere.dev"
-              required
+              required={true}
               aria-label="Email"
               ref={inputRef}
             />

@@ -8,13 +8,16 @@ export default function StatsBar() {
   let barRef: HTMLDivElement | undefined;
 
   onMount(() => {
-    const bar = barRef!;
+    const bar = barRef;
+    if (!bar) return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+          if (!entry.isIntersecting) {
+            return;
+          }
           animateCounter(setEssays, 47);
-          animateCounter(setWords, 184320);
+          animateCounter(setWords, 184_320);
           observer.unobserve(bar);
         });
       },

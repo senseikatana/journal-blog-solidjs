@@ -1,3 +1,5 @@
+// biome-ignore lint/correctness/noNodejsModules: endpoint de servidor (nitro), node:crypto solo corre en Node
+import { createHash, timingSafeEqual } from "node:crypto";
 import type { APIEvent } from "@solidjs/start/server";
 
 function json(payload: unknown, status: number): Response {
@@ -12,6 +14,13 @@ interface VercelBlob {
   pathname?: string;
 }
 
+/** Compara dos strings con longitud de tiempo constante para no filtrar el código. */
+function safeEqual(a: string, b: string): boolean {
+  const ha = createHash("sha256").update(a).digest();
+  const hb = createHash("sha256").update(b).digest();
+  return timingSafeEqual(ha, hb);
+}
+
 /**
  * POST /api/download/{id}  body: { token: string }
  *
@@ -21,7 +30,9 @@ interface VercelBlob {
  */
 export async function POST({ params, request }: APIEvent) {
   const id = params.id?.toLowerCase();
-  if (!id) return json({ error: "missing document id" }, 400);
+  if (!id || !/^[a-z0-9-]{1,64}$/.test(id)) {
+    return json({ error: "invalid document id" }, 400);
+  }
 
   let token: string | undefined;
   try {
@@ -33,7 +44,7 @@ export async function POST({ params, request }: APIEvent) {
 
   const envKey = `DOCS_TOKEN_${id.toUpperCase().replace(/-/g, "_")}`;
   const expected = process.env[envKey];
-  if (!expected || !token || token !== expected) {
+  if (!expected || !token || !safeEqual(token, expected)) {
     return json({ error: "unauthorized" }, 401);
   }
 
@@ -42,20 +53,25 @@ export async function POST({ params, request }: APIEvent) {
     const listRes = await fetch(listUrl, {
       headers: { authorization: `Bearer ${process.env.BLOB_READ_WRITE_TOKEN}` },
     });
-    if (!listRes.ok) return json({ error: "storage unavailable" }, 503);
+    if (!listRes.ok) {
+      return json({ error: "storage unavailable" }, 503);
+    }
 
     const { blobs } = (await listRes.json()) as { blobs: VercelBlob[] };
     const blob =
       blobs.find((b) => b.pathname === `docs/${id}.pdf`) ??
-      blobs.find((b) => b.pathname === `docs/${id}`) ??
-      blobs[0];
-    if (!blob) return json({ error: "document not found" }, 404);
+      blobs.find((b) => b.pathname === `docs/${id}`);
+    if (!blob) {
+      return json({ error: "document not found" }, 404);
+    }
 
     const blobToken = process.env.BLOB_READ_WRITE_TOKEN;
     const res = await fetch(blob.url, {
       headers: blobToken ? { authorization: `Bearer ${blobToken}` } : {},
     });
-    if (!res.ok || !res.body) return json({ error: "failed to read document" }, 502);
+    if (!(res.ok && res.body)) {
+      return json({ error: "failed to read document" }, 502);
+    }
 
     return new Response(res.body, {
       headers: {

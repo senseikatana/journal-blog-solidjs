@@ -7,7 +7,12 @@ import Banner from "./Banner";
 export default function ArticleCard(props: { post: Post }) {
   const { post } = props;
   const dateLabel = post.pubDate
-    .toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+    .toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      timeZone: "UTC",
+    })
     .toUpperCase();
 
   return (

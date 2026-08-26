@@ -11,9 +11,15 @@ export default function Header() {
 
   const pageNav = () => {
     const path = location.pathname.replace(/\/+$/, "");
-    if (path.startsWith("/projects")) return "projects";
-    if (path.startsWith("/resume")) return "resume";
-    if (path.startsWith("/about")) return "about";
+    if (path.startsWith("/projects")) {
+      return "projects";
+    }
+    if (path.startsWith("/resume")) {
+      return "resume";
+    }
+    if (path.startsWith("/about")) {
+      return "about";
+    }
     return "";
   };
 
@@ -22,7 +28,9 @@ export default function Header() {
     let a = "";
     homeSections.forEach((key) => {
       const el = document.getElementById(key);
-      if (el && el.offsetTop <= scrollY) a = key;
+      if (el && el.offsetTop <= scrollY) {
+        a = key;
+      }
     });
     return a;
   };
@@ -35,7 +43,9 @@ export default function Header() {
 
   onMount(() => {
     const update = () => {
-      if (!pageNav()) setActive(scrollSpy());
+      if (!pageNav()) {
+        setActive(scrollSpy());
+      }
     };
     window.addEventListener("scroll", update, { passive: true });
     onCleanup(() => window.removeEventListener("scroll", update));
@@ -43,16 +53,16 @@ export default function Header() {
 
   // Anclas internas (/#stack): en la home dejamos actuar al ancla nativa,
   // que respeta el historial (back vuelve al inicio). Desde otra página,
-  // navegamos en SPA a la home y fijamos el hash para el scroll suave.
+  // navegamos en SPA a la home con el hash; el router hace scroll al
+  // elemento por su id (scrollToHash).
   const onAnchorClick = (item: NavItem) => (e: MouseEvent) => {
     const onHome = location.pathname.replace(/\/+$/, "") === "";
-    if (onHome) return;
+    if (onHome) {
+      return;
+    }
     e.preventDefault();
     const section = item.href.replace(/^\/#/, "");
-    navigate(homeHref);
-    setTimeout(() => {
-      location.hash = section;
-    }, 150);
+    navigate(`${homeHref}#${section}`);
   };
 
   return (

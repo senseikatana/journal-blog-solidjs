@@ -11,8 +11,12 @@ export default function SiteChrome(props: { children: JSX.Element }) {
 
     const onKeydown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") return;
-      if (e.key === "t" || e.key === "T") cycleTheme();
+      if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
+        return;
+      }
+      if (e.key === "t" || e.key === "T") {
+        cycleTheme();
+      }
     };
     document.addEventListener("keydown", onKeydown);
     onCleanup(() => document.removeEventListener("keydown", onKeydown));
@@ -20,9 +24,9 @@ export default function SiteChrome(props: { children: JSX.Element }) {
 
   return (
     <>
-      <div class="bg-grid"></div>
-      <div class="bg-glow"></div>
-      <div class="bg-noise"></div>
+      <div class="bg-grid" />
+      <div class="bg-glow" />
+      <div class="bg-noise" />
       <ProgressBar />
       <Header />
       <main>{props.children}</main>

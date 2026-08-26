@@ -27,9 +27,9 @@ export default function NotFound() {
           <div class="terminal">
             <div class="terminal-head">
               <div class="terminal-dots">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span />
+                <span />
+                <span />
               </div>
               <span class="terminal-title">sys.write — error.log</span>
             </div>
@@ -47,10 +47,10 @@ export default function NotFound() {
                 </div>
                 <div>
                   <span class="key">exit code:</span> 1{" "}
-                  <span class="comment">{"// nothing to see here"}</span>
+                  <span class="comment">{/* nothing to see here */}</span>
                 </div>
                 <div style={{ "margin-top": "12px" }}>
-                  <span class="prompt">$</span> <span class="cursor"></span>
+                  <span class="prompt">$</span> <span class="cursor" />
                 </div>
               </div>
             </div>

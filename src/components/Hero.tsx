@@ -22,8 +22,11 @@ export default function Hero() {
     let timer: ReturnType<typeof setTimeout> | undefined;
     const tick = () => {
       const word = greetings[i];
-      if (deleting) char = Math.max(0, char - 1);
-      else char = Math.min(word.length, char + 1);
+      if (deleting) {
+        char = Math.max(0, char - 1);
+      } else {
+        char = Math.min(word.length, char + 1);
+      }
       setTyped(word.slice(0, char));
       let delay = deleting ? 28 : 55;
       if (!deleting && char === word.length) {
@@ -50,8 +53,9 @@ export default function Hero() {
     const clockInterval = setInterval(updateClock, 1000);
 
     // Subtle parallax on the terminal
-    const hero = heroRef!;
-    const terminal = terminalRef!;
+    const hero = heroRef;
+    const terminal = terminalRef;
+    if (!hero || !terminal) return;
     const onMove = (e: MouseEvent) => {
       const rect = hero.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -78,7 +82,7 @@ export default function Hero() {
         <div class="hero-grid">
           <div>
             <div class="hero-meta">
-              <span class="dot"></span>
+              <span class="dot" />
               <span>system online</span>
               <span class="divider">/</span>
               <span id="clock">{clock()}</span>
@@ -91,7 +95,7 @@ export default function Hero() {
               <span class="typed" id="typed">
                 {typed()}
               </span>
-              <span class="hero-caret"></span>
+              <span class="hero-caret" />
             </h1>
             <p class="hero-lede">
               Backend engineer writing about <em>distributed systems</em>, the strange poetry of
@@ -112,7 +116,7 @@ export default function Hero() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                  <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
               </a>
               <a href="#newsletter" class="btn btn-ghost">
@@ -127,8 +131,8 @@ export default function Hero() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <path d="M4 4h16v16H4z"></path>
-                  <path d="m4 6 8 7 8-7"></path>
+                  <path d="M4 4h16v16H4z" />
+                  <path d="m4 6 8 7 8-7" />
                 </svg>
                 subscribe
               </a>
@@ -138,9 +142,9 @@ export default function Hero() {
           <div class="terminal" aria-hidden="true" ref={terminalRef}>
             <div class="terminal-head">
               <div class="terminal-dots">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span />
+                <span />
+                <span />
               </div>
               <span class="terminal-title">maren@hal9k — zsh</span>
             </div>
@@ -170,7 +174,7 @@ export default function Hero() {
                   <span class="str">- cite the source commit</span>
                 </div>
                 <div style={{ "margin-top": "12px" }}>
-                  <span class="prompt">$</span> <span class="cursor"></span>
+                  <span class="prompt">$</span> <span class="cursor" />
                 </div>
               </div>
             </div>

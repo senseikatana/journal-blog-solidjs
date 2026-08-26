@@ -10,7 +10,9 @@ function DocCard(props: { doc: PrivateDoc }) {
   const onSubmit = async (e: Event) => {
     e.preventDefault();
     const input = inputRef;
-    if (!input) return;
+    if (!input) {
+      return;
+    }
     const token = input.value.trim();
     if (!token) {
       setStatus("enter the access code");
@@ -37,7 +39,7 @@ function DocCard(props: { doc: PrivateDoc }) {
       document.body.appendChild(a);
       a.click();
       a.remove();
-      URL.revokeObjectURL(url);
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
       setStatus("download started");
     } catch {
       setStatus("network error");
@@ -60,8 +62,8 @@ function DocCard(props: { doc: PrivateDoc }) {
           stroke-linejoin="round"
           class="doc-lock"
         >
-          <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          <rect x="3" y="11" width="18" height="11" rx="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
       </div>
       <h4 class="resume-card-role">{props.doc.label}</h4>

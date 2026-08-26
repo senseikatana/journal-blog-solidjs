@@ -30,8 +30,8 @@ export default function StackSection() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
                 </svg>
               </div>
               <span class="stack-name">Daily driver</span>
@@ -63,9 +63,9 @@ export default function StackSection() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <path d="M12 2 2 7l10 5 10-5-10-5Z"></path>
-                  <path d="m2 17 10 5 10-5"></path>
-                  <path d="m2 12 10 5 10-5"></path>
+                  <path d="M12 2 2 7l10 5 10-5-10-5Z" />
+                  <path d="m2 17 10 5 10-5" />
+                  <path d="m2 12 10 5 10-5" />
                 </svg>
               </div>
               <span class="stack-name">For thinking</span>
@@ -97,8 +97,8 @@ export default function StackSection() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 6v6l4 2"></path>
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
                 </svg>
               </div>
               <span class="stack-name">Observability</span>
@@ -130,8 +130,8 @@ export default function StackSection() {
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <path d="M4 17 9 12 4 7"></path>
-                  <path d="M12 19h8"></path>
+                  <path d="M4 17 9 12 4 7" />
+                  <path d="M12 19h8" />
                 </svg>
               </div>
               <span class="stack-name">Editor &amp; shell</span>

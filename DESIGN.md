@@ -17,23 +17,23 @@ Four principles drive every visual decision. When you add something new, check i
 
 ## Color tokens
 
-Colors are semantic CSS custom properties defined in `:root` in `src/app.css`. Each theme overrides them with a `[data-theme]` selector, so components reference the semantic name and never a raw hex value.
+Colors are semantic CSS custom properties defined in `:root` in `src/app.css`. Each theme overrides them with a `[data-theme]` selector, so components reference the semantic name and never a raw color value. All colors use the OKLCH space: `oklch(L C H)` for opaque colors and `oklch(L C H / a)` for alpha.
 
 | Token | Dark (default) | Light | High contrast | Purpose |
 | --- | --- | --- | --- | --- |
-| `--bg` | `#0d0e10` | `#f5f0e1` | `#000000` | Page background |
-| `--bg-elevated` | `#16181c` | `#ffffff` | `#0a0a0a` | Header and elevated surfaces |
-| `--bg-card` | `#131418` | `#fffaf0` | `#050505` | Cards and panels |
-| `--bg-inset` | `#08090b` | `#ebe5d3` | `#000000` | Inset areas, footer, inputs |
-| `--fg` | `#ebe7dc` | `#1a1612` | `#ffffff` | Primary text |
-| `--fg-muted` | `#8a8578` | `#6b6354` | `#b8b8b8` | Secondary text |
-| `--fg-dim` | `#4a463e` | `#b5ac99` | `#5a5a5a` | Tertiary text and comments |
-| `--accent` | `#ff8c42` | `#c8501a` | `#ffff00` | Primary accent, links, highlights |
-| `--accent-2` | `#5eead4` | `#0d9488` | `#00ffff` | Secondary accent, success, prompts |
-| `--border` | `#232530` | `#d8cfb8` | `#2a2a2a` | Default borders |
-| `--border-strong` | `#383a47` | `#b5ac99` | `#ffffff` | Strong borders |
-| `--danger` | `#ff5470` | `#b91c1c` | `#ff0000` | Errors and destructive states |
-| `--code-bg` | `#08090b` | `#1a1612` | `#000000` | Code blocks and terminals |
+| `--bg` | `oklch(0.164 0.005 264.4)` | `oklch(0.955 0.021 91.6)` | `oklch(0 0 0)` | Page background |
+| `--bg-elevated` | `oklch(0.209 0.009 264.4)` | `oklch(1 0 89.9)` | `oklch(0.145 0 89.9)` | Header and elevated surfaces |
+| `--bg-card` | `oklch(0.192 0.008 274.5)` | `oklch(0.986 0.014 84.6)` | `oklch(0.115 0 89.9)` | Cards and panels |
+| `--bg-inset` | `oklch(0.139 0.005 262.8)` | `oklch(0.922 0.025 91.6)` | `oklch(0 0 0)` | Inset areas, footer, inputs |
+| `--fg` | `oklch(0.928 0.015 90.2)` | `oklch(0.203 0.01 67.2)` | `oklch(1 0 89.9)` | Primary text |
+| `--fg-muted` | `oklch(0.617 0.02 89.4)` | `oklch(0.503 0.025 83.2)` | `oklch(0.783 0 89.9)` | Secondary text |
+| `--fg-dim` | `oklch(0.395 0.014 84.6)` | `oklch(0.747 0.028 85.7)` | `oklch(0.468 0 89.9)` | Tertiary text and comments |
+| `--accent` | `oklch(0.754 0.164 50.4)` | `oklch(0.583 0.165 41.2)` | `oklch(0.968 0.211 109.8)` | Primary accent, links, highlights |
+| `--accent-2` | `oklch(0.855 0.125 181.1)` | `oklch(0.6 0.104 184.7)` | `oklch(0.905 0.155 194.8)` | Secondary accent, success, prompts |
+| `--border` | `oklch(0.267 0.021 276.8)` | `oklch(0.856 0.033 89.2)` | `oklch(0.285 0 89.9)` | Default borders |
+| `--border-strong` | `oklch(0.352 0.023 278.3)` | `oklch(0.747 0.028 85.7)` | `oklch(1 0 89.9)` | Strong borders |
+| `--danger` | `oklch(0.686 0.206 15)` | `oklch(0.505 0.19 27.5)` | `oklch(0.628 0.258 29.2)` | Errors and destructive states |
+| `--code-bg` | `oklch(0.139 0.005 262.8)` | `oklch(0.203 0.01 67.2)` | `oklch(0 0 0)` | Code blocks and terminals |
 
 Related tokens include `--accent-soft` and `--accent-glow` for soft fills and glows, `--grid-line` for the background grid, and `--selection` for text selection.
 
@@ -131,7 +131,7 @@ A quick checklist for review. If a change violates a "don't", reconsider it.
 
 **Don't:**
 
-- Hardcode hex colors in components.
+- Hardcode color values in components.
 - Use `transition: all`, `outline: none` without a replacement, or loops that never stop.
 - Introduce a fourth theme without updating this document and the Tailwind `@theme` block.
 - Add horizontal rules or em dashes in documentation prose.

@@ -4,7 +4,7 @@ description: 'Section by section, with a notebook. What I noticed on the fourth 
 pubDate: 2024-07-03
 readTime: 22
 tags: ['consensus', 'distributed-systems']
-accent: '#c084fc'
+accent: 'oklch(0.722 0.177 305.5)'
 pattern: grid
 ---
 

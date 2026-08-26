@@ -4,7 +4,7 @@ description: 'Not forever. But I spent a year measuring what they actually caugh
 pubDate: 2024-08-11
 readTime: 11
 tags: ['testing', 'ci']
-accent: '#5eead4'
+accent: 'oklch(0.855 0.125 181.1)'
 pattern: lines
 ---
 

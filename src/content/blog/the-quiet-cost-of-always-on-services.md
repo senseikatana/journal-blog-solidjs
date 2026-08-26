@@ -4,7 +4,7 @@ description: 'A three-year retrospective on the small, compounding decisions tha
 pubDate: 2024-09-22
 readTime: 14
 tags: ['system', 'reliability']
-accent: '#ff8c42'
+accent: 'oklch(0.754 0.164 50.4)'
 pattern: dots
 ---
 

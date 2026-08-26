@@ -4,7 +4,7 @@ description: 'The four queries I check first when something is wrong, and what e
 pubDate: 2024-04-08
 readTime: 17
 tags: ['postgres', 'ops']
-accent: '#ff5470'
+accent: 'oklch(0.686 0.206 15)'
 pattern: waves
 ---
 

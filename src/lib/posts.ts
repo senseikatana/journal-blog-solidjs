@@ -68,7 +68,7 @@ function parsePost(raw: string, id: string): Post {
     updatedDate: data.updatedDate ? parseDate(data.updatedDate) : undefined,
     readTime: Number(data.readTime ?? 0),
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
-    accent: String(data.accent ?? "#ff8c42"),
+    accent: String(data.accent ?? "oklch(0.754 0.164 50.4)"),
     pattern: (data.pattern as Pattern) ?? "dots",
     body: content,
   };

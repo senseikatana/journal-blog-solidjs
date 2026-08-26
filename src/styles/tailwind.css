@@ -13,19 +13,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0d0e10;
-  --color-bg-elevated: #16181c;
-  --color-bg-card: #131418;
-  --color-bg-inset: #08090b;
-  --color-fg: #ebe7dc;
-  --color-fg-muted: #8a8578;
-  --color-fg-dim: #4a463e;
-  --color-accent: #ff8c42;
-  --color-accent-2: #5eead4;
-  --color-border: #232530;
-  --color-border-strong: #383a47;
-  --color-danger: #ff5470;
-  --color-code: #08090b;
+  --color-bg: oklch(0.164 0.005 264.4);
+  --color-bg-elevated: oklch(0.209 0.009 264.4);
+  --color-bg-card: oklch(0.192 0.008 274.5);
+  --color-bg-inset: oklch(0.139 0.005 262.8);
+  --color-fg: oklch(0.928 0.015 90.2);
+  --color-fg-muted: oklch(0.617 0.02 89.4);
+  --color-fg-dim: oklch(0.395 0.014 84.6);
+  --color-accent: oklch(0.754 0.164 50.4);
+  --color-accent-2: oklch(0.855 0.125 181.1);
+  --color-border: oklch(0.267 0.021 276.8);
+  --color-border-strong: oklch(0.352 0.023 278.3);
+  --color-danger: oklch(0.686 0.206 15);
+  --color-code: oklch(0.139 0.005 262.8);
 
   --font-serif: "Fraunces", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;

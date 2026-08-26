@@ -4,7 +4,7 @@ description: 'A defense of the side projects that never finished. They taught me
 pubDate: 2024-02-27
 readTime: 7
 tags: ['craft', 'side-projects']
-accent: '#93c5fd'
+accent: 'oklch(0.809 0.096 251.8)'
 pattern: triangles
 ---
 

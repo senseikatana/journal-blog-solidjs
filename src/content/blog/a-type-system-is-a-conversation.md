@@ -4,7 +4,7 @@ description: 'About the social contract between the person who wrote the types a
 pubDate: 2024-05-19
 readTime: 9
 tags: ['types', 'rust']
-accent: '#fbbf24'
+accent: 'oklch(0.837 0.164 84.4)'
 pattern: circles
 ---
 

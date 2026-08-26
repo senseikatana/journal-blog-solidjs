@@ -22,8 +22,8 @@ export default function NewsletterSection() {
               Get the next essay <em>in your inbox</em>
             </h3>
             <p>
-              One email every other Sunday. Long-form pieces about the systems I'm building and
-              the bugs I'm chasing. No tracking, no sponsors, unsubscribe with a single click.
+              One email every other Sunday. Long-form pieces about the systems I'm building and the
+              bugs I'm chasing. No tracking, no sponsors, unsubscribe with a single click.
             </p>
           </div>
           <form class="newsletter-form" id="newsletterForm" onSubmit={onSubmit}>

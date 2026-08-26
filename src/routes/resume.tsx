@@ -16,8 +16,12 @@ export default function Resume() {
             <div class="resume-contact">
               <span>{resume.location}</span>
               <a href={`mailto:${resume.contact.email}`}>{resume.contact.email}</a>
-              <a href={resume.contact.github}>{resume.contact.github.replace(/^https?:\/\//, "")}</a>
-              <a href={resume.contact.website}>{resume.contact.website.replace(/^https?:\/\//, "")}</a>
+              <a href={resume.contact.github}>
+                {resume.contact.github.replace(/^https?:\/\//, "")}
+              </a>
+              <a href={resume.contact.website}>
+                {resume.contact.website.replace(/^https?:\/\//, "")}
+              </a>
               <a class="btn btn-primary resume-download" href="/cv.pdf" download="">
                 <svg
                   width="14"
@@ -56,7 +60,9 @@ export default function Resume() {
                 {(job, i) => (
                   <div class="resume-card">
                     <div class="resume-card-top">
-                      <span class="resume-card-kicker">[ exp {String(i() + 1).padStart(2, "0")} ]</span>
+                      <span class="resume-card-kicker">
+                        [ exp {String(i() + 1).padStart(2, "0")} ]
+                      </span>
                       <span class="resume-card-period">{job.period}</span>
                     </div>
                     <h4 class="resume-card-role">{job.role}</h4>

@@ -1,5 +1,5 @@
 import { For } from "solid-js";
-import { THEMES, setTheme, theme } from "~/lib/theme";
+import { setTheme, THEMES, theme } from "~/lib/theme";
 
 export default function ThemeToggle() {
   return (

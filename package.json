@@ -5,13 +5,12 @@
     "dev": "vite dev",
     "build": "vite build",
     "start": "node .output/server/index.mjs",
-    "preview": "vite preview"
+    "preview": "node .output/server/index.mjs"
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^1.0.0",
     "@solidjs/start": "^2.0.0",
-    "gray-matter": "^4.0.3",
     "marked": "^18.0.11",
     "nitro": "^3.0.260610-beta",
     "solid-js": "^1.9.14",
@@ -21,6 +20,7 @@
     "node": ">=24"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.10",
     "@types/node": "^26.3.0",
     "typescript": "^7.0.2"
   },

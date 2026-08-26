@@ -1,4 +1,4 @@
-import { onCleanup, onMount, type JSX } from "solid-js";
+import { type JSX, onCleanup, onMount } from "solid-js";
 import { cycleTheme, initTheme } from "~/lib/theme";
 import Footer from "./Footer";
 import Header from "./Header";

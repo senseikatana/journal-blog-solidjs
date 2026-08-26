@@ -1,17 +1,16 @@
 import { A, useLocation, useNavigate } from "@solidjs/router";
-import { createEffect, createSignal, onCleanup, onMount } from "solid-js";
+import { createEffect, createSignal, For, onCleanup, onMount } from "solid-js";
 import { SITE_TITLE } from "~/consts";
-import { scrollToSection } from "~/lib/scroll";
+import { homeHref, homeSections, mainNav, type NavItem } from "~/lib/navigation";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [active, setActive] = createSignal("blog");
-  
+  const [active, setActive] = createSignal("");
+
   const pageNav = () => {
     const path = location.pathname.replace(/\/+$/, "");
-    if (path.startsWith("/blog")) return "blog";
     if (path.startsWith("/projects")) return "projects";
     if (path.startsWith("/resume")) return "resume";
     if (path.startsWith("/about")) return "about";
@@ -20,8 +19,8 @@ export default function Header() {
 
   const scrollSpy = () => {
     const scrollY = window.scrollY + 120;
-    let a = "blog";
-    (["stack", "projects"] as const).forEach((key) => {
+    let a = "";
+    homeSections.forEach((key) => {
       const el = document.getElementById(key);
       if (el && el.offsetTop <= scrollY) a = key;
     });
@@ -42,25 +41,24 @@ export default function Header() {
     onCleanup(() => window.removeEventListener("scroll", update));
   });
 
-  const onStackClick = (e: MouseEvent) => {
-    e.preventDefault();
+  // Anclas internas (/#stack): en la home dejamos actuar al ancla nativa,
+  // que respeta el historial (back vuelve al inicio). Desde otra página,
+  // navegamos en SPA a la home y fijamos el hash para el scroll suave.
+  const onAnchorClick = (item: NavItem) => (e: MouseEvent) => {
     const onHome = location.pathname.replace(/\/+$/, "") === "";
-    if (onHome) {
-      scrollToSection("stack");
-      history.pushState(null, "", "/#stack");
-    } else {
-      navigate("/");
-      setTimeout(() => {
-        scrollToSection("stack");
-        history.replaceState(null, "", "/#stack");
-      }, 150);
-    }
+    if (onHome) return;
+    e.preventDefault();
+    const section = item.href.replace(/^\/#/, "");
+    navigate(homeHref);
+    setTimeout(() => {
+      location.hash = section;
+    }, 150);
   };
 
   return (
     <header class="site-header">
       <div class="header-inner">
-        <A href="/" class="brand" aria-label={SITE_TITLE}>
+        <A href={homeHref} class="brand" aria-label={SITE_TITLE}>
           <span class="brand-mark">{"{}"}</span>
           <span class="brand-text">
             sys.write<span class="paren">()</span>
@@ -68,27 +66,30 @@ export default function Header() {
           </span>
         </A>
         <nav class="primary" aria-label="Primary">
-          <A class="nav-link" classList={{ active: active() === "blog" }} data-nav="blog" href="/blog/">
-            writing
-          </A>
-          <a
-            class="nav-link"
-            classList={{ active: active() === "stack" }}
-            data-nav="stack"
-            href="/#stack"
-            onClick={onStackClick}
-          >
-            stack
-          </a>
-          <A class="nav-link" classList={{ active: active() === "projects" }} data-nav="projects" href="/projects/">
-            projects
-          </A>
-          <A class="nav-link" classList={{ active: active() === "resume" }} data-nav="resume" href="/resume/">
-            resume
-          </A>
-          <A class="nav-link" classList={{ active: active() === "about" }} data-nav="about" href="/about/">
-            about
-          </A>
+          <For each={mainNav}>
+            {(item) =>
+              item.kind === "anchor" ? (
+                <a
+                  class="nav-link"
+                  classList={{ active: active() === item.key }}
+                  data-nav={item.key}
+                  href={item.href}
+                  onClick={onAnchorClick(item)}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <A
+                  class="nav-link"
+                  classList={{ active: active() === item.key }}
+                  data-nav={item.key}
+                  href={item.href}
+                >
+                  {item.label}
+                </A>
+              )
+            }
+          </For>
         </nav>
         <div class="header-actions">
           <ThemeToggle />

@@ -24,4 +24,4 @@ export function bumpForks() {
   forksTimer = setTimeout(() => setForksFlash(false), 800);
 }
 
-export { totalStars, totalForks, starsFlash, forksFlash };
+export { forksFlash, starsFlash, totalForks, totalStars };

@@ -10,8 +10,8 @@ export default function StackSection() {
             </h2>
           </div>
           <p class="section-desc">
-            Not a "tech I love" list. These are the things currently installed on my machine and
-            the repos I'm actively maintaining.
+            Not a "tech I love" list. These are the things currently installed on my machine and the
+            repos I'm actively maintaining.
           </p>
         </div>
 
@@ -133,8 +133,8 @@ export default function StackSection() {
               <span class="stack-name">Editor &amp; shell</span>
             </div>
             <p class="stack-desc">
-              Neovim with a config I keep promising to publish, tmux for sessions, fish as my
-              shell, and a Model 100 keyboard that runs my own QMK firmware.
+              Neovim with a config I keep promising to publish, tmux for sessions, fish as my shell,
+              and a Model 100 keyboard that runs my own QMK firmware.
             </p>
             <div class="stack-badges">
               <span class="chip">neovim</span>

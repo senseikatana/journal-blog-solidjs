@@ -1,6 +1,6 @@
 import { createSignal, For } from "solid-js";
 import PageMeta from "~/components/PageMeta";
-import { privateDocs, type PrivateDoc } from "~/data/docs";
+import { type PrivateDoc, privateDocs } from "~/data/docs";
 import { resume } from "~/data/resume";
 
 function DocCard(props: { doc: PrivateDoc }) {
@@ -104,8 +104,8 @@ export default function Docs() {
               </h2>
             </div>
             <p class="section-desc">
-              These files are not listed anywhere and their URLs are never exposed. Enter the
-              access code I shared with you to download.
+              These files are not listed anywhere and their URLs are never exposed. Enter the access
+              code I shared with you to download.
             </p>
           </div>
 

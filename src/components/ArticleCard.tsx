@@ -1,7 +1,7 @@
-import type { Post } from "~/lib/posts";
 import { A } from "@solidjs/router";
 import { For } from "solid-js";
 import { AUTHOR } from "~/consts";
+import type { Post } from "~/lib/posts";
 import Banner from "./Banner";
 
 export default function ArticleCard(props: { post: Post }) {

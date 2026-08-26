@@ -64,8 +64,7 @@ export default function CodeSnippet() {
         <div class="section-head">
           <div>
             <h2 class="section-title">
-              <span class="index">[ 02 / snippet ]</span>
-              A pattern I keep <em>reaching for</em>
+              <span class="index">[ 02 / snippet ]</span>A pattern I keep <em>reaching for</em>
             </h2>
           </div>
           <p class="section-desc">
@@ -81,7 +80,12 @@ export default function CodeSnippet() {
               <span class="code-block-file">
                 <span class="dir">ratelimit/</span>tokenbucket.go
               </span>
-              <button class="copy-btn" classList={{ copied: copied() }} data-copy-target="snippet1" onClick={onCopy}>
+              <button
+                class="copy-btn"
+                classList={{ copied: copied() }}
+                data-copy-target="snippet1"
+                onClick={onCopy}
+              >
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"

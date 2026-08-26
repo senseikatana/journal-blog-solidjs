@@ -1,5 +1,4 @@
 import { createSignal, onCleanup, onMount } from "solid-js";
-import { scrollToSection } from "~/lib/scroll";
 
 const greetings = [
   "shipping a distributed scheduler.",
@@ -100,15 +99,7 @@ export default function Hero() {
               takes. Mostly logs.
             </p>
             <div class="hero-cta">
-              <a
-                href="#articles"
-                class="btn btn-primary"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("articles");
-                  history.pushState(null, "", "/#articles");
-                }}
-              >
+              <a href="#articles" class="btn btn-primary">
                 read the journal
                 <svg
                   width="14"
@@ -123,15 +114,7 @@ export default function Hero() {
                   <path d="M5 12h14M13 6l6 6-6 6"></path>
                 </svg>
               </a>
-              <a
-                href="#newsletter"
-                class="btn btn-ghost"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("newsletter");
-                  history.pushState(null, "", "/#newsletter");
-                }}
-              >
+              <a href="#newsletter" class="btn btn-ghost">
                 <svg
                   width="14"
                   height="14"

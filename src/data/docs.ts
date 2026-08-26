@@ -8,20 +8,20 @@
 //      company or person you grant access to.
 
 export interface PrivateDoc {
-	id: string;
-	label: string;
-	desc: string;
+  id: string;
+  label: string;
+  desc: string;
 }
 
 export const privateDocs: PrivateDoc[] = [
-	{
-		id: 'cv-full',
-		label: 'CV — full version',
-		desc: 'Complete CV including phone, address and references. Only shared with companies I have already talked to.',
-	},
-	{
-		id: 'portfolio-extended',
-		label: 'Portfolio — extended',
-		desc: 'Detailed write-ups of the projects in the archive, with architecture notes and metrics.',
-	},
+  {
+    id: "cv-full",
+    label: "CV — full version",
+    desc: "Complete CV including phone, address and references. Only shared with companies I have already talked to.",
+  },
+  {
+    id: "portfolio-extended",
+    label: "Portfolio — extended",
+    desc: "Detailed write-ups of the projects in the archive, with architecture notes and metrics.",
+  },
 ];

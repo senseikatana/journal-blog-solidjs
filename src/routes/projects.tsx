@@ -31,7 +31,13 @@ export default function Projects() {
           <div class="stack-grid">
             <For each={featured}>
               {(p) => (
-                <RepoCard repo={p.repo} owner={p.owner} desc={p.desc} stars={p.stars} forks={p.forks} />
+                <RepoCard
+                  repo={p.repo}
+                  owner={p.owner}
+                  desc={p.desc}
+                  stars={p.stars}
+                  forks={p.forks}
+                />
               )}
             </For>
           </div>

@@ -1,8 +1,8 @@
 import { useParams } from "@solidjs/router";
-import { HttpStatusCode } from "@solidjs/start";
 import { For } from "solid-js";
 import Banner from "~/components/Banner";
 import FormattedDate from "~/components/FormattedDate";
+import NotFound from "~/components/NotFound";
 import PageMeta from "~/components/PageMeta";
 import { getPost, renderMarkdown } from "~/lib/posts";
 
@@ -12,20 +12,7 @@ export default function BlogPostRoute() {
   const post = getPost(slug);
 
   if (!post) {
-    return (
-      <>
-        <PageMeta title="Post not found" description="This essay does not exist in the archive." />
-        <section class="section page-hero">
-          <div class="container container--narrow">
-            <HttpStatusCode code={404} />
-            <h2 class="section-title">
-              <span class="index">[ 404 ]</span>
-              Post not <em>found</em>
-            </h2>
-          </div>
-        </section>
-      </>
-    );
+    return <NotFound />;
   }
 
   return (

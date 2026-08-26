@@ -1,5 +1,6 @@
 import { A } from "@solidjs/router";
 import { SITE_TITLE } from "~/consts";
+import { resume } from "~/data/resume";
 
 export default function Footer() {
   return (
@@ -43,7 +44,7 @@ export default function Footer() {
             <h4>Elsewhere</h4>
             <ul>
               <li>
-                <a href="#">GitHub</a>
+                <a href={resume.contact.github}>GitHub</a>
               </li>
               <li>
                 <a href="#">Mastodon</a>
@@ -72,7 +73,7 @@ export default function Footer() {
                 <a href="#">Speaking</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href={`mailto:${resume.contact.email}`}>Contact</a>
               </li>
             </ul>
           </div>

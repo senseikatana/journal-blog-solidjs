@@ -2,6 +2,7 @@ import { For } from "solid-js";
 import ArticleCard from "~/components/ArticleCard";
 import CodeSnippet from "~/components/CodeSnippet";
 import Hero from "~/components/Hero";
+import NewsletterSection from "~/components/NewsletterSection";
 import PageMeta from "~/components/PageMeta";
 import RepoCard from "~/components/RepoCard";
 import StackSection from "~/components/StackSection";
@@ -73,6 +74,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <NewsletterSection />
     </>
   );
 }

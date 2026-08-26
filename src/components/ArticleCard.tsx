@@ -1,7 +1,7 @@
+import type { Post } from "~/lib/posts";
 import { A } from "@solidjs/router";
 import { For } from "solid-js";
 import { AUTHOR } from "~/consts";
-import type { Post } from "~/lib/posts";
 import Banner from "./Banner";
 
 export default function ArticleCard(props: { post: Post }) {
@@ -15,7 +15,7 @@ export default function ArticleCard(props: { post: Post }) {
       <div class="card-banner">
         <Banner pattern={post.pattern} accent={post.accent} id={post.id} />
         <div class="tags">
-          <For each={post.tags}>{(t) => <span class="tag">{t}</span>}</For>
+          <For each={post.tags}>{(current) => <span class="tag">{current}</span>}</For>
         </div>
         <span class="read-time">{post.readTime} min</span>
       </div>

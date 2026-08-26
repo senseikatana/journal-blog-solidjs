@@ -1,12 +1,14 @@
-import { A, useLocation } from "@solidjs/router";
+import { A, useLocation, useNavigate } from "@solidjs/router";
 import { createEffect, createSignal, onCleanup, onMount } from "solid-js";
 import { SITE_TITLE } from "~/consts";
+import { scrollToSection } from "~/lib/scroll";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [active, setActive] = createSignal("blog");
-
+  
   const pageNav = () => {
     const path = location.pathname.replace(/\/+$/, "");
     if (path.startsWith("/blog")) return "blog";
@@ -40,6 +42,21 @@ export default function Header() {
     onCleanup(() => window.removeEventListener("scroll", update));
   });
 
+  const onStackClick = (e: MouseEvent) => {
+    e.preventDefault();
+    const onHome = location.pathname.replace(/\/+$/, "") === "";
+    if (onHome) {
+      scrollToSection("stack");
+      history.pushState(null, "", "/#stack");
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        scrollToSection("stack");
+        history.replaceState(null, "", "/#stack");
+      }, 150);
+    }
+  };
+
   return (
     <header class="site-header">
       <div class="header-inner">
@@ -54,7 +71,13 @@ export default function Header() {
           <A class="nav-link" classList={{ active: active() === "blog" }} data-nav="blog" href="/blog/">
             writing
           </A>
-          <a class="nav-link" classList={{ active: active() === "stack" }} data-nav="stack" href="/#stack">
+          <a
+            class="nav-link"
+            classList={{ active: active() === "stack" }}
+            data-nav="stack"
+            href="/#stack"
+            onClick={onStackClick}
+          >
             stack
           </a>
           <A class="nav-link" classList={{ active: active() === "projects" }} data-nav="projects" href="/projects/">

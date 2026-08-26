@@ -1774,6 +1774,10 @@ footer.site-footer {
 	.stack-grid {
 		grid-template-columns: 1fr;
 	}
+	.newsletter {
+		grid-template-columns: 1fr;
+		padding: 40px 28px;
+	}
 	.footer-grid {
 		grid-template-columns: 1fr 1fr;
 	}

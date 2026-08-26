@@ -102,6 +102,7 @@ export default function Hero() {
               <a href="#articles" class="btn btn-primary">
                 read the journal
                 <svg
+                  aria-hidden="true"
                   width="14"
                   height="14"
                   viewBox="0 0 24 24"
@@ -116,6 +117,7 @@ export default function Hero() {
               </a>
               <a href="#newsletter" class="btn btn-ghost">
                 <svg
+                  aria-hidden="true"
                   width="14"
                   height="14"
                   viewBox="0 0 24 24"

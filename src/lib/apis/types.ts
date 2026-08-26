@@ -11,7 +11,7 @@ export interface UrlOptions {
   query?: Record<string, string | number | boolean>;
 }
 
-export interface FetchOptions<T = unknown> extends UrlOptions, Omit<RequestInit, "body"> {
+export interface FetchOptions extends UrlOptions, Omit<RequestInit, "body"> {
   body?: BodyInit | null;
 }
 

@@ -47,12 +47,15 @@ export default function Footer() {
                 <a href={resume.contact.github}>GitHub</a>
               </li>
               <li>
+                {/* biome-ignore lint/a11y/useValidAnchor: placeholder del diseño, pendiente de URL real */}
                 <a href="#">Mastodon</a>
               </li>
               <li>
+                {/* biome-ignore lint/a11y/useValidAnchor: placeholder del diseño, pendiente de URL real */}
                 <a href="#">Bluesky</a>
               </li>
               <li>
+                {/* biome-ignore lint/a11y/useValidAnchor: placeholder del diseño, pendiente de URL real */}
                 <a href="#">Read.cv</a>
               </li>
             </ul>
@@ -64,12 +67,15 @@ export default function Footer() {
                 <A href="/docs/">Docs</A>
               </li>
               <li>
+                {/* biome-ignore lint/a11y/useValidAnchor: placeholder del diseño, pendiente de URL real */}
                 <a href="#">Colophon</a>
               </li>
               <li>
+                {/* biome-ignore lint/a11y/useValidAnchor: placeholder del diseño, pendiente de URL real */}
                 <a href="#">Uses</a>
               </li>
               <li>
+                {/* biome-ignore lint/a11y/useValidAnchor: placeholder del diseño, pendiente de URL real */}
                 <a href="#">Speaking</a>
               </li>
               <li>

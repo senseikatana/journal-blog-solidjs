@@ -24,6 +24,7 @@ export default function Resume() {
               </a>
               <a class="btn btn-primary resume-download" href="/cv.pdf" download="">
                 <svg
+                  aria-hidden="true"
                   width="14"
                   height="14"
                   viewBox="0 0 24 24"
@@ -39,7 +40,11 @@ export default function Resume() {
                 </svg>
                 download cv — pdf
               </a>
-              <button class="btn btn-ghost resume-print" onClick={() => window.print()}>
+              <button
+                type="button"
+                class="btn btn-ghost resume-print"
+                onClick={() => window.print()}
+              >
                 print — save as pdf
               </button>
               <a class="resume-docs-link" href="/docs/">

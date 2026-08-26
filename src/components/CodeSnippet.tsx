@@ -81,12 +81,14 @@ export default function CodeSnippet() {
                 <span class="dir">ratelimit/</span>tokenbucket.go
               </span>
               <button
+                type="button"
                 class="copy-btn"
                 classList={{ copied: copied() }}
                 data-copy-target="snippet1"
                 onClick={onCopy}
               >
                 <svg
+                  aria-hidden="true"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"

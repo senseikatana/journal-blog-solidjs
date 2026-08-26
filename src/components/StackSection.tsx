@@ -20,6 +20,7 @@ export default function StackSection() {
             <div class="stack-card-head">
               <div class="stack-icon">
                 <svg
+                  aria-hidden="true"
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
@@ -52,6 +53,7 @@ export default function StackSection() {
             <div class="stack-card-head">
               <div class="stack-icon">
                 <svg
+                  aria-hidden="true"
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
@@ -85,6 +87,7 @@ export default function StackSection() {
             <div class="stack-card-head">
               <div class="stack-icon">
                 <svg
+                  aria-hidden="true"
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"
@@ -117,6 +120,7 @@ export default function StackSection() {
             <div class="stack-card-head">
               <div class="stack-icon">
                 <svg
+                  aria-hidden="true"
                   width="20"
                   height="20"
                   viewBox="0 0 24 24"

@@ -49,6 +49,7 @@ function DocCard(props: { doc: PrivateDoc }) {
       <div class="resume-card-top">
         <span class="resume-card-kicker">[ doc ]</span>
         <svg
+          aria-hidden="true"
           width="14"
           height="14"
           viewBox="0 0 24 24"

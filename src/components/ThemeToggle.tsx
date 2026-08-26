@@ -13,7 +13,9 @@ export default function ThemeToggle() {
       <span class="indicator" aria-hidden="true"></span>
       <For each={THEMES}>
         {(t) => (
+          // biome-ignore lint/a11y/useSemanticElements: patrón ARIA válido radiogroup + botones role="radio"
           <button
+            type="button"
             data-theme-set={t}
             classList={{ active: theme() === t }}
             role="radio"

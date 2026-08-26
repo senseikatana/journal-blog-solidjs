@@ -67,7 +67,7 @@ function parsePost(raw: string, id: string): Post {
 
 const posts: Post[] = Object.entries(modules)
   .map(([path, raw]) => {
-    const id = path.split("/").pop()!.replace(/\.md$/, "");
+    const id = path.split("/").pop()?.replace(/\.md$/, "") ?? path;
     return parsePost(raw, id);
   })
   .sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf());

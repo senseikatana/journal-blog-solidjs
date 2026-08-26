@@ -1,4 +1,9 @@
 /* ==========================================================================
+   Framework base (compilado desde src/styles/scss/app.scss)
+   ========================================================================== */
+@import "./styles/compiled.css";
+
+/* ==========================================================================
    sys.write() — design system, ported from the chat.z.ai landing
    ========================================================================== */
 
@@ -1749,6 +1754,7 @@ footer.site-footer {
   .bg-noise,
   .toast,
   .theme-toggle {
+    /* biome-ignore lint/complexity/noImportantStyles: debe ganar a cualquier display durante la impresión */
     display: none !important;
   }
   body {
@@ -1834,7 +1840,9 @@ footer.site-footer {
   *,
   *::before,
   *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: debe anular cualquier animación/transición existente */
     animation-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: debe anular cualquier animación/transición existente */
     transition-duration: 0.01ms !important;
   }
 }

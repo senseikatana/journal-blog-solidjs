@@ -126,5 +126,5 @@ for (const post of payload.posts) {
   ].join("\n");
 
   writeFileSync(resolve(BLOG_DIR, `${slug}.md`), md);
-  _created++;
+  _created += 1;
 }

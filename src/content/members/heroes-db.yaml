@@ -1,0 +1,54 @@
+universos:
+  DC:
+    heroes:
+      - nombre_real: "Bruce Wayne"
+        alias: "Batman"
+        ciudad: "Gotham City"
+        habilidades:
+          - "Maestro de todas las artes marciales"
+          - "El mayor detective del mundo"
+          - "Estratega táctico experto"
+        debilidad: "Humano sin poderes, traumas psicológicos"
+      - nombre_real: "Clark Kent / Kal-El"
+        alias: "Superman"
+        ciudad: "Metropolis"
+        habilidades:
+          - "Vuelo"
+          - "Visión de calor y rayos X"
+          - "Superfuerza y velocidad"
+        debilidad: "Kryptonita, magia, sol rojo"
+      - nombre_real: "Diana Prince"
+        alias: "Wonder Woman"
+        ciudad: "Themyscira / Washington D.C."
+        habilidades:
+          - "Fuerza sobrehumana divina"
+          - "Reflejos rápidos"
+          - "Lazo de la Verdad, brazaletes deflectores"
+        debilidad: "Vínculos con dioses que pueden retirar su poder"
+
+  Marvel_XMen:
+    heroes:
+      - nombre_real: "Logan / James Howlett"
+        alias: "Wolverine"
+        ciudad: "Westchester, NY (Base X-Men)"
+        habilidades:
+          - "Factor de curación regenerativa"
+          - "Garras de Adamantium"
+          - "Sentidos animales agudizados"
+        debilidad: "Traumas de memoria, magnetismo (por el Adamantium)"
+      - nombre_real: "Charles Francis Xavier"
+        alias: "Professor X"
+        ciudad: "Westchester, NY"
+        habilidades:
+          - "Telepatía nivel Omega"
+          - "Control y lectura de mentes"
+          - "Proyección astral"
+        debilidad: "Parapléjico, vulnerable a cascos anti-telepatía"
+      - nombre_real: "Ororo Munroe"
+        alias: "Storm"
+        ciudad: "Westchester, NY"
+        habilidades:
+          - "Manipulación del clima"
+          - "Control de elementos atmosféricos"
+          - "Vuelo a través del viento"
+        debilidad: "Claustrofobia severa"

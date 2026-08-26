@@ -1,0 +1,19 @@
+nombre: "Infiltración en la Mansión X"
+codigo: "X-007"
+estado: "Planificada"
+descripcion: >
+  Magneto ha enviado a Mystique y a su hermandad para robar el Cerebro del Profesor Xavier.
+  Los X-Men deben proteger la mansión y descubrir los planes de Magneto.
+objetivos:
+  - Detectar a los infiltrados.
+  - Neutralizar a Mystique y sus secuaces.
+  - Asegurar el Cerebro.
+heroes_involucrados:
+  - Wolverine
+  - Tormenta
+  - Jean Grey
+villanos_involucrados:
+  - Magneto
+  - Mystique
+  - Sabretooth
+recompensa: "Información sobre los planes de Magneto para la humanidad"

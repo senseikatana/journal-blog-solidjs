@@ -1,0 +1,3 @@
+# Misión: "Sintonía Caótica" (Marvel / DC Crossover)
+Descripción: El Joker ha conseguido una gema de la realidad (del universo Marvel) robada por un error cuántico. Al fusionar su locura con la gema, la física de Gotham y Nueva York ha comenzado a fusionarse. Las calles son vigiladas por Centinelas que ríen maníacamente.Objetivo: Batman y Spider-Man deben trabajar juntos. Spider-Man usará su intelecto científico para rastrear la firma energética de la gema, mientras Batman se encarga de predecir los movimientos irracionales del Joker. Deben quitarle la gema antes de que el Joker borre la existencia del concepto del "mañana".Estado: Realidad inestable. Coordinación héroe-aliada requerida.
+

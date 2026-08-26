@@ -1,0 +1,23 @@
+nombre: "Asedio a la Tierra"
+codigo: "AP-999"
+estado: "Activa"
+descripcion: >
+  Darkseid y Thanos, en una alianza temporal, han unido sus ejércitos para conquistar
+  la Tierra. Liga de la Justicia y Vengadores deben unir fuerzas para detenerlos.
+objetivos:
+  - Defender las principales ciudades del ataque.
+  - Encontrar el punto débil de la alianza.
+  - Derrotar a Darkseid y Thanos.
+heroes_involucrados:
+  - Superman
+  - Batman
+  - Wonder Woman
+  - Iron Man
+  - Capitán América
+  - Thor
+villanos_involucrados:
+  - Darkseid
+  - Thanos
+  - Parademons
+  - Orden Negro
+recompensa: "Supervivencia del planeta y alianza interestelar"

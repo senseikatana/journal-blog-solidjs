@@ -1,0 +1,16 @@
+nombre: "Salvar Metrópolis"
+codigo: "SM-001"
+estado: "En curso"
+descripcion: >
+  Lex Luthor ha desplegado un ejército de drones armados con kryptonita por toda Metrópolis.
+  Superman debe neutralizar la amenaza mientras evita bajas civiles.
+objetivos:
+  - Localizar la fuente de control de los drones.
+  - Desactivar los drones sin dañar la ciudad.
+  - Capturar a Lex Luthor.
+heroes_involucrados:
+  - Superman
+  - Batgirl (apoyo tecnológico)
+villanos_involucrados:
+  - Lex Luthor
+recompensa: "Restauración de la paz en Metrópolis"

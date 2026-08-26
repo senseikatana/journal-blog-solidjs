@@ -1,0 +1,60 @@
+universos:
+  DC:
+    villanos:
+      - nombre_real: "Lex Luthor"
+        alias: "Lex Luthor"
+        primera_aparicion: "Action Comics #23 (1940)"
+        habilidades:
+          - "Intelecto nivel genio"
+          - "Maestría en manipulación"
+          - "Gran riqueza y recursos tecnológicos"
+        motivacion: "Erradicar la influencia alienígena y gobernar a la humanidad."
+        base_de_operaciones: "LexCorp Tower, Metropolis"
+      - nombre_real: "Desconocido"
+        alias: "The Joker"
+        primera_aparicion: "Batman #1 (1940)"
+        habilidades:
+          - "Inmunidad a venenos"
+          - "Genio criminal de la química"
+          - "Imprevisibilidad absoluta"
+        motivacion: "Sembrar el caos y probar que la cordura es una broma."
+        base_de_operaciones: "Funhouse de Ace Chemicals, Gotham City"
+      - nombre_real: "Uxas"
+        alias: "Darkseid"
+        primera_aparicion: "Superman's Pal Jimmy Olsen #134 (1970)"
+        habilidades:
+          - "Fuerza y durabilidad divinas"
+          - "Rayo Omega"
+          - "Inmortalidad"
+        motivacion: "Encontrar la Ecuación Anti-Vida y esclavizar al universo."
+        base_de_operaciones: "Apokolips"
+
+  X-Men:
+    villanos:
+      - nombre_real: "Max Eisenhardt"
+        alias: "Magneto"
+        primera_aparicion: "X-Men #1 (1963)"
+        habilidades:
+          - "Manipulación de campos magnéticos"
+          - "Generación de campos de fuerza"
+          - "Vuelo"
+        motivacion: "Asegurar la supervivencia y supremacía de la raza mutante a cualquier costo."
+        base_de_operaciones: "Asteroid M / Genosha"
+      - nombre_real: "Raven Darkholme"
+        alias: "Mystique"
+        primera_aparicion: "Ms. Marvel #16 (1978)"
+        habilidades:
+          - "Cambio de forma (Aspecto y voz)"
+          - "Factor de curación menor"
+          - "Longevidad"
+        motivacion: "Proteger a los mutantes mediante el espionaje y el asesinato, sin importar la moralidad."
+        base_de_operaciones: "Móvil"
+      - nombre_real: "En Sabah Nur"
+        alias: "Apocalypse"
+        primera_aparicion: "X-Factor #5 (1986)"
+        habilidades:
+          - "Manipulación molecular de su cuerpo"
+          - "Absorción de energía"
+          - "Tecnopatía"
+        motivacion: "Purificar la Tierra a través de la guerra. Solo los fuertes sobrevivirán."
+        base_de_operaciones: "El Akkaba / Nave Celestial"

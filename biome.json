@@ -23,7 +23,7 @@
         "noUnusedImports": "warn"
       },
       "style": {
-        "noNonNullAssertion": "warn"
+        "noNonNullAssertion": "info"
       }
     }
   },

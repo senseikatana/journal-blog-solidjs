@@ -103,6 +103,7 @@
       "linter": {
         "rules": {
           "correctness": { "noNodejsModules": "off" },
+          "suspicious": { "noConsole": "off" },
           "style": { "noNonNullAssertion": "off" }
         }
       }

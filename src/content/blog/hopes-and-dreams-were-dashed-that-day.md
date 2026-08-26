@@ -1,13 +1,52 @@
 ---
 title: 'Hopes and dreams were dashed that day.'
-description: 'Hopes and dreams were dashed that day. It should have been expected, but it still came as a shock. The warning signs had been ignored in favor of the ...'
+description: 'Hopes and dreams were dashed that day. It should have been expected, but it still came as a...'
 pubDate: 2026-08-21
-readTime: 1
-tags: ['crime', 'mystery', 'love']
+readTime: 2
+tags: ['testing', 'testing', 'ts', 'vitest']
 accent: 'oklch(0.837 0.164 84.4)'
 pattern: triangles
 reactions: 119
 views: 626
 ---
 
-Hopes and dreams were dashed that day. It should have been expected, but it still came as a shock. The warning signs had been ignored in favor of the possibility, however remote, that it could actually happen. That possibility had grown from hope to an undeniable belief it must be destiny. That was until it wasn't and the hopes and dreams came crashing down.
+# Hopes and dreams were dashed that day.
+
+## The shape of the problem
+
+Hopes and dreams were dashed that day. It should have been expected, but it still came as a shock. The warning signs had been ignored in favor of the possibility, however remote, that it could actually happen. That possibility had grown from hope to an undeniable belief it must be destiny. That was until it wasn't and the hopes and dreams came crashing down. That was the letter I received at 3am, and it is the needle this article threads.
+
+Everyone has a story like this one: the service was working, the runbook was short, and then the edge case that should have been rare became the default. This is a note from the field about a testing problem I keep meeting.
+
+The day it happened, I started where the error pointed and worked backwards. What follows is the walk.
+
+## What actually broke
+
+The test suite was green, the deploy was green, and the users were not.
+
+```ts
+it("returns the cart total after applying discounts", () => {
+    const cart = fixtures.cart();
+    expect(cart.total()).toBe(42);
+});
+```
+
+The code that solved it was boring. The interesting part was deciding where to put it.
+
+## The changes that mattered
+
+- Replaced the integration tests that measured nothing with contracts that measured everything.
+- Wrote the failure first, so every green test had a story.
+- Measured what the tests caught in production. The answer changed my whole career.
+
+## What I would keep
+
+In a postmortem you usually leave with a few opinions and one fact. The fact I keep is the same every time: The contract tests. They are the only tests that talk to a real service.
+
+> A note from the on-call log: things did not get faster when we added machinery. They got faster when we removed the decisions.
+
+## The shape of the answer
+
+Tests are not a safety net. They are the cheapest simulation of a bad Tuesday. The rest of this essay is the anatomy of that change, section by section.
+
+_Filed under testing, ts, vitest. Written after the pager went quiet._

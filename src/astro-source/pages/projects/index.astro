@@ -1,0 +1,71 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import RepoCard from '../../components/RepoCard.astro';
+import { resume } from '../../data/resume';
+
+const featured = resume.projects.slice(0, 2);
+const others = resume.projects.slice(2);
+---
+
+<MainLayout
+	title={`Projects — ${resume.name}`}
+	description="Open source projects by Sergio Jurado: small, focused utilities and libraries."
+>
+	<section class="section page-hero">
+		<div class="container">
+			<div class="section-head">
+				<div>
+					<h2 class="section-title">
+						<span class="index">[ projects ]</span>
+						Open source, <em>live</em>
+					</h2>
+				</div>
+				<p class="section-desc">
+					Counters refresh every few seconds. Most of these are small utilities
+					— I'd rather ship something focused than popular.
+				</p>
+			</div>
+
+			<div class="stack-grid">
+				{
+					featured.map((p) => (
+						<RepoCard
+							repo={p.repo}
+							owner={p.owner}
+							desc={p.desc}
+							stars={p.stars}
+							forks={p.forks}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	{
+		others.length > 0 && (
+			<section class="section section--tight">
+				<div class="container container--narrow">
+					<div class="resume-section">
+						<h3>[ other projects ]</h3>
+						{
+							others.map((p) => (
+								<div class="mini-project">
+									<div class="mini-project-head">
+										<span class="mini-project-name">
+											<a href={`https://github.com/${p.owner}/${p.repo}`}>{p.repo}</a>
+										</span>
+									</div>
+									<p class="mini-project-desc">{p.desc}</p>
+										<div class="chip-row">
+											{p.tags.map((t) => <span class="chip">{t}</span>)}
+										</div>
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</section>
+		)
+	}
+</MainLayout>

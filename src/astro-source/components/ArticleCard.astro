@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { makeBanner } from '../lib/banners';
+import { AUTHOR } from '../consts';
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, readTime, tags, accent, pattern } = post.data;
+const banner = makeBanner(pattern, accent, post.id);
+const dateLabel = pubDate
+	.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+	.toUpperCase();
+---
+
+<a class="card" href={`/blog/${post.id}/`} aria-label={title}>
+	<div class="card-banner">
+		<Fragment set:html={banner} />
+		<div class="tags">
+			{tags.map((t) => <span class="tag">{t}</span>)}
+		</div>
+		<span class="read-time">{readTime} min</span>
+	</div>
+	<div class="card-body">
+		<div class="card-date">
+			<span>{dateLabel}</span>
+			<span class="sep">·</span>
+			<span>{readTime} min read</span>
+		</div>
+		<h3 class="card-title">{title}</h3>
+		<p class="card-excerpt">{description}</p>
+		<div class="card-foot">
+			<div class="card-author">
+				<span class="avatar">MH</span>
+				<span>{AUTHOR}</span>
+			</div>
+			<span class="card-readmore">read →</span>
+		</div>
+	</div>
+</a>

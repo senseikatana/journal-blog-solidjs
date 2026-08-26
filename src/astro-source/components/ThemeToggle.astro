@@ -1,0 +1,25 @@
+---
+const themes = ['dark', 'light', 'hc'];
+---
+
+<div
+	class="theme-toggle"
+	id="themeToggle"
+	data-state="dark"
+	role="radiogroup"
+	aria-label="Theme"
+>
+	<span class="indicator" aria-hidden="true"></span>
+	{
+		themes.map((t) => (
+			<button
+				data-theme-set={t}
+				class:list={{ active: t === 'dark' }}
+				role="radio"
+				aria-checked={t === 'dark' ? 'true' : 'false'}
+			>
+				{t}
+			</button>
+		))
+	}
+</div>

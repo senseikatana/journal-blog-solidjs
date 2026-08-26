@@ -1,0 +1,35 @@
+/*
+ * Tailwind CSS v4 — capa de utilidades del proyecto.
+ *
+ * Los tokens del @theme replican el design system de src/app.css para que
+ * las utilidades (bg-bg, text-accent, font-mono, …) usen los mismos valores.
+ * Solo se compila lo que se usa: Tailwind purga las clases no utilizadas.
+ *
+ * IMPORTANTE: los temas dark/light/hc se aplican mediante variables CSS
+ * [data-theme] definidas en src/app.css. Los colores de este @theme son los
+ * valores del tema oscuro por defecto; para elementos tematizados usa las
+ * variables del design system, no utilidades de color.
+ */
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0d0e10;
+  --color-bg-elevated: #16181c;
+  --color-bg-card: #131418;
+  --color-bg-inset: #08090b;
+  --color-fg: #ebe7dc;
+  --color-fg-muted: #8a8578;
+  --color-fg-dim: #4a463e;
+  --color-accent: #ff8c42;
+  --color-accent-2: #5eead4;
+  --color-border: #232530;
+  --color-border-strong: #383a47;
+  --color-danger: #ff5470;
+  --color-code: #08090b;
+
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 960px;
+}

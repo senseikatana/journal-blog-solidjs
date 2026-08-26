@@ -1,0 +1,24 @@
+{
+  "dummyjson": {
+    "baseUri": "https://dummyjson.com",
+    "endpoints": {
+      "posts": "/posts",
+      "postById": "/posts/:id",
+      "postsSearch": "/posts/search",
+      "postsAllTags": "/posts/tags",
+      "postsTagList": "/posts/tag-list",
+      "postsByTag": "/posts/tag/:tag",
+      "postsByUser": "/posts/user/:userId",
+      "postComments": "/posts/:postId/comments"
+    },
+    "defaultQueryParams": {
+      "posts": {
+        "limit": 30,
+        "skip": 0
+      },
+      "postsSearch": {
+        "q": ""
+      }
+    }
+  }
+}

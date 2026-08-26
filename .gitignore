@@ -20,9 +20,6 @@ yarn-debug.log*
 pnpm-debug.log*
 bun-debug.log*
 
-# Sass compilado (se regenera con bun run styles)
-src/styles/compiled.css
-
 # Archivos de entorno
 .env
 .env.local

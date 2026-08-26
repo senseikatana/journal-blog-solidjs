@@ -2,10 +2,8 @@
   "name": "journal-blog-solidjs",
   "type": "module",
   "scripts": {
-    "styles": "sass src/styles/scss/app.scss src/styles/compiled.css --no-source-map",
-    "styles:watch": "sass src/styles/scss/app.scss src/styles/compiled.css --no-source-map --watch",
-    "dev": "bun run styles && vite dev",
-    "build": "bun run styles && vite build",
+    "dev": "vite dev",
+    "build": "vite build",
     "start": "node .output/server/index.mjs",
     "preview": "node .output/server/index.mjs",
     "check": "biome check .",
@@ -28,7 +26,6 @@
   "devDependencies": {
     "@biomejs/biome": "^2.5.10",
     "@types/node": "^26.3.0",
-    "sass": "^1.103.1",
     "typescript": "^7.0.2"
   },
   "author": "Sergio Jurado",

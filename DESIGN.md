@@ -4,7 +4,7 @@ This document describes the design system for `journal-blog-solidjs`, a dark-fir
 
 ## TL;DR
 
-The site uses a custom CSS design system in `src/app.css` with three themes (dark, light, and high contrast), Fraunces for display text and JetBrains Mono for body and code, a terminal-inspired aesthetic, and an orange accent. Tailwind CSS v4 provides a utility layer on top, and a Sass framework in `src/styles/scss` generates optional tokens and utilities. Keep the design system classes for anything thematic; reach for Tailwind utilities for one-off layout tweaks.
+The site uses a custom CSS design system in `src/app.css` with three themes (dark, light, and high contrast), Fraunces for display text and JetBrains Mono for body and code, a terminal-inspired aesthetic, and an orange accent. Tailwind CSS v4 provides a utility layer on top, configured through `@theme`. Keep the design system classes for anything thematic; reach for Tailwind utilities for one-off layout tweaks.
 
 ## Design principles
 
@@ -98,14 +98,13 @@ The Tailwind `@theme` block in `src/styles/tailwind.css` mirrors the dark theme 
 
 ## Tooling
 
-The CSS pipeline has three layers, in order of import: Tailwind, the compiled Sass framework, and the design system. The design system wins any cascade conflict because it loads last.
+The CSS pipeline has two layers, in order of import: Tailwind and the design system. The design system wins any cascade conflict because it loads last.
 
 - **Tailwind CSS v4** (`@tailwindcss/vite`): provides utilities configured through `@theme` in `src/styles/tailwind.css`. Unused classes are purged at build time, so only what the code references ships.
-- **Sass framework** (`src/styles/scss`): your own utility framework. `bun run styles` compiles `app.scss` to `src/styles/compiled.css`, which is gitignored. `bun run styles:watch` recompiles on change.
 - **Design system** (`src/app.css`): the source of truth for the journal look. Write thematic styles here.
 - **Biome** (`biome.json`): formats and lints everything, including CSS. Run `bun run check` before committing and `bun run format` to fix.
 
-When you add a style, ask which layer it belongs to: a reusable utility goes to Tailwind or the Sass framework, a component or page style goes to the design system.
+When you add a style, ask which layer it belongs to: a reusable utility goes to Tailwind, a component or page style goes to the design system.
 
 ## Content voice
 
@@ -135,5 +134,4 @@ A quick checklist for review. If a change violates a "don't", reconsider it.
 - Hardcode hex colors in components.
 - Use `transition: all`, `outline: none` without a replacement, or loops that never stop.
 - Introduce a fourth theme without updating this document and the Tailwind `@theme` block.
-- Ship the compiled CSS by hand; `bun run styles` regenerates it.
 - Add horizontal rules or em dashes in documentation prose.

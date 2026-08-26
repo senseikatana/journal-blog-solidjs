@@ -89,6 +89,31 @@ export function getPost(id: string): Post | undefined {
   return posts.find((p) => p.id === id);
 }
 
+/** Slugifica un tag para URLs: "type theory" -> "type-theory". */
+export function tagSlug(tag: string): string {
+  return tag
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+/** Resuelve el display original de un tag a partir de su slug de URL. */
+export function tagFromSlug(slug: string): string | undefined {
+  const norm = slug.toLowerCase();
+  for (const p of posts) {
+    for (const t of p.tags) {
+      if (tagSlug(t) === norm) {
+        return t;
+      }
+    }
+  }
+  return undefined;
+}
+
+export function tagHref(tag: string): string {
+  return `/blog/tag/${tagSlug(tag)}`;
+}
+
 export function renderMarkdown(markdown: string): string {
   return marked.parse(markdown, { async: false }) as string;
 }

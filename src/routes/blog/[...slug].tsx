@@ -4,7 +4,7 @@ import Banner from "~/components/Banner";
 import FormattedDate from "~/components/FormattedDate";
 import NotFound from "~/components/NotFound";
 import PageMeta from "~/components/PageMeta";
-import { getPost, renderMarkdown } from "~/lib/posts";
+import { getPost, renderMarkdown, tagHref } from "~/lib/posts";
 
 export default function BlogPostRoute() {
   const params = useParams();
@@ -25,7 +25,13 @@ export default function BlogPostRoute() {
           </div>
           <header class="article-head">
             <div class="article-meta">
-              <For each={post.tags}>{(t) => <span class="tag">{t}</span>}</For>
+              <For each={post.tags}>
+                {(t) => (
+                  <a class="tag" href={tagHref(t)} aria-label={`Posts tagged ${t}`}>
+                    {t}
+                  </a>
+                )}
+              </For>
               <span>
                 <FormattedDate date={post.pubDate} />
               </span>

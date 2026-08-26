@@ -2,44 +2,17 @@
 @use "../partials/breakpoints" as bp;
 
 // ============================================================
-//  COMPONENTES DE EJEMPLO (usando @apply)
-//  Aquí van tus estilos personalizados.
+//  COMPONENTES PERSONALIZADOS (usando @apply)
+//
+//  Aquí van tus estilos de componentes. Usa nombres con prefijo
+//  para no chocar con las clases del design system (src/app.css),
+//  que ya define .hero, .card, .btn, .terminal, etc.
+//
+//  Ejemplo:
+//    .scss-card {
+//      @include a.apply(flex, flex-col, p-4, rounded-lg, shadow-md);
+//    }
+//
+//  Nota: los estilos del journal viven en src/app.css. Solo añade
+//  aquí utilidades nuevas del framework o componentes aislados.
 // ============================================================
-
-.card {
-  @include a.apply(flex, flex-col, p-4, rounded-lg, shadow-md, bg-white);
-
-  &:hover {
-    @include a.apply(shadow-lg);
-  }
-}
-
-.button {
-  @include a.apply(
-    inline-flex,
-    items-center,
-    justify-center,
-    px-4,
-    py-2,
-    rounded-md,
-    font-semibold,
-    transition-colors
-  );
-}
-
-.container-custom {
-  @include a.apply(flex, flex-col, gap-4, p-6);
-
-  @include bp.md {
-    @include a.apply(flex-row, gap-6, p-8);
-  }
-}
-
-// Combinando con clases HTML normales
-.hero {
-  @include a.apply(grid, grid-cols-1, gap-8, p-8);
-
-  @include bp.lg {
-    @include a.apply(grid-cols-2, gap-12, p-12);
-  }
-}
